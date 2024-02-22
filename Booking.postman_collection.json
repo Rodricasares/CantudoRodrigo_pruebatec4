@@ -1,0 +1,823 @@
+{
+	"info": {
+		"_postman_id": "f7daabe6-d33f-44fb-98ae-35e951cac81f",
+		"name": "Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19876177"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/user/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User\",\r\n    \"last_name\": \"Last Name\",\r\n    \"age\": 29\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user/getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rodri",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user/edit/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/edit/1?id=1&name=Rodrigo&last_name=Cantudo&age=37",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"edit",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "Rodrigo"
+						},
+						{
+							"key": "last_name",
+							"value": "Cantudo"
+						},
+						{
+							"key": "age",
+							"value": "37"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user/delete/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hotel/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Nombre del Hotel\",\r\n  \"city\": \"Ciudad del Hotel\",\r\n  \"code\": \"Código del Hotel\",\r\n  \"rooms\": [\r\n    {\r\n      \"type\": 1,\r\n      \"price\": 100,\r\n      \"booking\": false,\r\n      \"checkIn\": \"2024-02-14\",\r\n      \"checkOut\": \"2024-02-16\"\r\n      // Otros campos de BookingRoom...\r\n    },\r\n    {\r\n      \"type\": 2,\r\n      \"price\": 150,\r\n      \"booking\": true,\r\n      \"checkIn\": \"2024-02-18\",\r\n      \"checkOut\": \"2024-02-20\"\r\n      // Otros campos de BookingRoom...\r\n    }\r\n    // Puedes agregar más habitaciones según sea necesario\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotel/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotel",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hotel/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hotel/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotel",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hotel/getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hotel/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotel",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hotel/edit/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hotel/edit/1?id=1&name=HOTEL NAME&city=Madrid&code=MD-001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotel",
+						"edit",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "HOTEL NAME"
+						},
+						{
+							"key": "city",
+							"value": "Madrid"
+						},
+						{
+							"key": "code",
+							"value": "MD-001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hotel/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hotel-booking/delete/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotel-booking",
+						"delete",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/add",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": 2,\r\n    \"roomNumber\": 15,\r\n    \"price\": 720.0,\r\n    \"booked\": false,\r\n    \"checkIn\": \"2024-02-12\",\r\n    \"checkOut\": \"2024-04-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/room/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/addRoom/{id}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rodri",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/addRoom/10?id=10&booked=false&hotel=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"addRoom",
+						"10"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						},
+						{
+							"key": "booked",
+							"value": "false"
+						},
+						{
+							"key": "hotel",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/edit/4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/edit/7?id=7&booked=false&checkIn=2024-03-15&checkOut=2024-03-20&price=1589&type=3&hotel=4&roomNumber=202",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"edit",
+						"7"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						},
+						{
+							"key": "booked",
+							"value": "false"
+						},
+						{
+							"key": "checkIn",
+							"value": "2024-03-15"
+						},
+						{
+							"key": "checkOut",
+							"value": "2024-03-20"
+						},
+						{
+							"key": "price",
+							"value": "1589"
+						},
+						{
+							"key": "type",
+							"value": "3"
+						},
+						{
+							"key": "user",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "hotel",
+							"value": "4"
+						},
+						{
+							"key": "roomNumber",
+							"value": "202"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/reserve/{id}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": 1,\r\n    \"price\": 120,\r\n    \"booking\": true,\r\n    \"checkIn\": \"2024-03-01\",\r\n    \"checkOut\": \"2024-03-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/room/reserve/2?id=1&booking=true&user=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"reserve",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "booking",
+							"value": "true"
+						},
+						{
+							"key": "hotel",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/reserveByDate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/reserveByDate?roomId=5&checkIn=2024-03-25&checkOut=2024-03-28&userId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"reserveByDate"
+					],
+					"query": [
+						{
+							"key": "roomId",
+							"value": "5"
+						},
+						{
+							"key": "checkIn",
+							"value": "2024-03-25"
+						},
+						{
+							"key": "checkOut",
+							"value": "2024-03-28"
+						},
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/room/available",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/available?checkIn=2024-02-16&checkOut=2024-02-18&bookingStatus=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"available"
+					],
+					"query": [
+						{
+							"key": "checkIn",
+							"value": "2024-02-16"
+						},
+						{
+							"key": "checkOut",
+							"value": "2024-02-18"
+						},
+						{
+							"key": "bookingStatus",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/flight/add",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rodri",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"flightNumber\": \"MD-2010\",\r\n\"name\": \"Iberia\",\r\n\"origin\": \"Madrid\",\r\n\"destination\": \"Barcelona\",\r\n\"isBooked\":false,\r\n\"seatType\": \"V-21\",\r\n\"flightPrice\": 129.0,\r\n\"date\": \"2024-03-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/flight/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/flight/getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flight/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/flight/edit/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flight/edit/1?id=1&flightNumber=MA-0010&name=Iberia&origin=Málaga&destination=Madrid&isBooked=true&seatType=A-10&flightPrice=60&use=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"edit",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "flightNumber",
+							"value": "MA-0010"
+						},
+						{
+							"key": "name",
+							"value": "Iberia"
+						},
+						{
+							"key": "origin",
+							"value": "Málaga"
+						},
+						{
+							"key": "destination",
+							"value": "Madrid"
+						},
+						{
+							"key": "isBooked",
+							"value": "true"
+						},
+						{
+							"key": "seatType",
+							"value": "A-10"
+						},
+						{
+							"key": "flightPrice",
+							"value": "60"
+						},
+						{
+							"key": "use",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/flight/reserve/2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flight/reserve/2?id=2&user=2&isBooked=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"reserve",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "user",
+							"value": "2"
+						},
+						{
+							"key": "isBooked",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/flight/available",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flight/available?date=2024-03-10&isBooked=false&destination=Madrid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"available"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-03-10"
+						},
+						{
+							"key": "isBooked",
+							"value": "false"
+						},
+						{
+							"key": "destination",
+							"value": "Madrid"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
